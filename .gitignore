@@ -1,0 +1,13 @@
+# FOLDERS
+node_modules/
+typings/
+certs/
+bin/
+build/
+.idea/
+.vscode/
+
+# FILES
+*.log
+.DS_Store
+secrets.env

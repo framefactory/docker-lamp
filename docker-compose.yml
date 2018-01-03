@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  server:
+    image: x3d/server
+    container_name: x3d-server
+    build:
+      context: ./server/setup
+      dockerfile: Dockerfile
+    env_file:
+      - ./server/setup/config.env
+      - ./server/setup/secrets.env
+    ports:
+      - "9020:80"
+    volumes:
+      - ./server/public:/app/www
+      - db_mysql_data:/app/db
+
+volumes:
+  db_mysql_data: {}
