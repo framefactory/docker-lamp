@@ -2,8 +2,8 @@ version: '2'
 
 services:
   server:
-    image: x3d/server
-    container_name: x3d-server
+    image: lamp/server
+    container_name: lamp-server
     build:
       context: ./server/setup
       dockerfile: Dockerfile

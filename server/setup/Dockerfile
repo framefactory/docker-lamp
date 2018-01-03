@@ -16,7 +16,7 @@ RUN apt-get update \
  && dos2unix *
 
 # Run provisioning scripts
-RUN source './config.env' && source './secrets.env' && bash -C './install.sh'
+RUN bash -C './install.sh'
 
 # Cleanup
 RUN apt-get -y autoremove \

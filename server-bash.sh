@@ -1,2 +1,2 @@
 #!/bin/bash
-docker exec -ti x3d-server bash
+docker exec -ti lamp-server bash

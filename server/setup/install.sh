@@ -1,14 +1,20 @@
 #!/bin/bash
 # Install LAMP stack on Ubuntu 16.04
 
+# Some tools
+apt-get install -y vim curl openssh-server
+
 # Variables
+source '/var/provisioning/config.env'
+source '/var/provisioning/secrets.env'
+
 #MYSQL_ROOT_PASS=password
 #PHPMYADMIN_APP_PASS=password
 
 # create app data directories
 mkdir -p /app/www
 mkdir -p /app/db
-mkdir -p /app/log
+mkdir -p /app/log/webserver
 
 # APACHE ---------------------------------------------------
 
@@ -43,6 +49,7 @@ a2dissite 000-default
 a2ensite 001-webserver
 
 # Apache modules
+a2dismod ssl
 a2enmod rewrite
 
 # MYSQL ----------------------------------------------------

@@ -1,4 +1,5 @@
 # FOLDERS
+server/public/
 node_modules/
 typings/
 certs/
